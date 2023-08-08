@@ -59,8 +59,7 @@ class OCR:
     def extract(self, img):
         texto = pytesseract.image_to_string(img, lang="por")
         return texto
-    
-    def mostrar_analise(self):
+
         
 ocr = OCR()
 ocr.main()
