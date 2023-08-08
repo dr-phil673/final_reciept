@@ -1,4 +1,4 @@
-#modulo para as FUNCOES internas do programa
+
 import re
 
 def buscar_cpf(texto):
@@ -67,15 +67,6 @@ def buscar_palavras_boas(texto):
     return cont_bem, percentual
 
 
-def calcula_percentual(quantidade, tamanho):
-    """Funcao para calcular o percentual de palavras boas/mas.
-    \nRetorna float, o percentual.
-    \nEx.:
-    quantidade = quantidade de palavras boas/mas
-    tamanho = quantidade de palavras do texto
-    percentual = calcula_percentual(quantidade, tamanho)"""
-    percentual = (quantidade / tamanho) * 100
-    return percentual
 
 
 def sumarizar_cpf(cpf):
