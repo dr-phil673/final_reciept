@@ -29,45 +29,6 @@ def buscar_data(texto):
         False
 
 
-def buscar_palavras_mas(texto):
-    """Funcao para buscar palavras 'mas' (mau) no texto extraido.
-    \nDespreza as palavras repetidas. Retorna um int, float.
-    \nRespectivamente a quantidade de palavras mas encontradas e o percentual delas no texto todo.
-    \nEx.:
-    texto = texto extraido da imagem
-    quantidade, percentual = buscar_palavras_mas(texto)"""
-    cont_mau = 0
-    palavras_mas = open("functions/palavras_mas.txt").read()
-    palavras_mas = palavras_mas.split("\n")
-    palavras_texto = set(re.split('[,;.?!/-: ]', texto))
-    for i in palavras_texto:
-        if i.upper() in palavras_mas:
-            cont_mau += 1
-    percentual = calcula_percentual(cont_mau, len(palavras_texto))
-
-    return cont_mau, percentual
-
-
-def buscar_palavras_boas(texto):
-    """Funcao para buscar palavras de 'bem' no texto extraido.
-    \nDespreza as palavras repetidas. Retorna um int, float.
-    \nRespectivamente a quantidade de palavras boas encontradas e o percentual delas no texto todo.
-    \nEx.:
-    texto = texto extraido da imagem
-    quantidade, percentual = buscar_palavras_boas(texto)"""
-    cont_bem = 0
-    palavras_boas = open("functions/palavras_boas.txt").read()
-    palavras_boas = palavras_boas.split("\n")
-    palavras_texto = set(re.split('[,;.?!/-: ]', texto))
-    for i in palavras_texto:
-        if i.upper() in palavras_boas:
-            cont_bem += 1
-    percentual = calcula_percentual(cont_bem, len(palavras_texto))
-
-    return cont_bem, percentual
-
-
-
 
 def sumarizar_cpf(cpf):
     """Funcao para deixar o CPF em string.
