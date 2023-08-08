@@ -26,8 +26,6 @@ class OCR:
             if self.analisar_texto==True:
                 cpf = fc.buscar_cpf(self.texto)
                 datas = fc.buscar_data(self.texto)
-                p_boas, percentual_bom = fc.buscar_palavras_boas(self.texto)
-                p_mas, percentual_mau = fc.buscar_palavras_mas(self.texto)
                 
                 if cpf==None:
                     st.warning("Nenhum CPF encontrado.")
@@ -43,17 +41,6 @@ class OCR:
                     st.success("Datas encontradas:")
                     st.write(datas)
                 
-                if p_boas==0:
-                    st.warning("Não identificado palavras de bem.")
-                else:
-                    st.success("Palavras de bem:")
-                    st.write("{} palavra(s). Representam das palavras do texto: {:.2f}%".format(p_boas, percentual_bom))
-                
-                if p_mas==0:
-                    st.warning("Não identificado palavras más.")
-                else:
-                    st.success("Palavras más:")
-                    st.write("{} palavra(s). Representam das palavras do texto: {:.2f}%".format(p_mas, percentual_mau))
 
     
     def extract(self, img):
