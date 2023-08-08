@@ -24,15 +24,15 @@ class OCR:
             
             self.analisar_texto = st.sidebar.checkbox("Analisar texto")
             if self.analisar_texto==True:
-                cpf = fc.buscar_cpf(self.texto)
+                #cpf = fc.buscar_cpf(self.texto)
                 datas = fc.buscar_data(self.texto)
                 
-                if cpf==None:
-                    st.warning("Nenhum CPF encontrado.")
-                else:
-                    cpf = fc.sumarizar_cpf(cpf)
-                    st.success("CPF encontrado:")
-                    st.write(cpf)
+                #if cpf==None:
+                #    st.warning("Nenhum CPF encontrado.")
+                #else:
+                #    cpf = fc.sumarizar_cpf(cpf)
+                #    st.success("CPF encontrado:")
+                #    st.write(cpf)
         
                 if datas==None:
                     st.warning("Nenhuma data encontrada.")
