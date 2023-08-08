@@ -44,7 +44,7 @@ class OCR:
 
     
     def extract(self, img):
-        texto = pytesseract.image_to_string(img, lang="por")
+        texto = pytesseract.image_to_string(img, lang="eng")
         return texto
 
         
