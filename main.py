@@ -7,27 +7,26 @@ import functions.functions as fc
 class OCR:
 
     def __init__(self):
-        st.set_page_config(page_title="Python OCR")
-        self.texto = ""
-        self.analisar_texto = False
+        st.set_page_config(page_title="Reciept OCR")
+        self.text = ""
 
     def main(self):
-        st.title("OCR Programa")
-        st.write("Optical Character Recognition (OCR) implementado com Python")
-        imagem = st.file_uploader("Selecione alguma imagem", type=["png","jpg"])
-        if imagem:
-            img = Image.open(imagem)
+        st.title("Reciept OCR")
+        st.write("Optical Character Recognition (OCR) implemented with Python")
+        image = st.file_uploader("Select an image.", type=["png","jpg"])
+        if image:
+            img = Image.open(image)
             st.image(img, width=350)
-            st.info("Texto extraído")
-            self.texto = self.extract(img)
-            st.write("{}".format(self.texto))
+            st.info("Extracted Text")
+            self.text = self.extract(img)
+            st.write("{}".format(self.text))
             
                 
 
     
     def extract(self, img):
-        texto = pytesseract.image_to_string(img, lang="eng")
-        return texto
+        text = pytesseract.image_to_string(img, lang="eng")
+        return text
 
         
 ocr = OCR()
