@@ -22,10 +22,13 @@ class OCR:
             st.write("{}".format(self.text))
             try:
                 trash, x = str(self.text).split("Tax")
+                print(re.findall(r"(\d+)M", x))
             except ValueError:
-                trash, x = str(self.text).split("TAX")
-            print(re.findall(r"(\d+)M", x))
-            
+                try:
+                    trash, x = str(self.text).split("TAX")
+                    print(re.findall(r"(\d+)M", x))
+                except:
+                    pass
             
                 
 
