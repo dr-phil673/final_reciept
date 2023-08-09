@@ -20,8 +20,10 @@ class OCR:
             st.info("Extracted Text")
             self.text = self.extract(img)
             #st.write("{}".format(self.text))
-            
-            trash, x = str(self.text).split("Tax")
+            try:
+                trash, x = str(self.text).split("Tax")
+            except ValueError:
+                trash, x = str(self.text).split("TAX")
             print(re.findall(r"(\d+)M", x))
             
             
