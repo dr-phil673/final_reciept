@@ -30,8 +30,6 @@ class OCR:
     
     def extract(self, img):
         text = pytesseract.image_to_string(img, lang="eng")
-        return text
-
-        if
+        return
 ocr = OCR()
 ocr.main()
