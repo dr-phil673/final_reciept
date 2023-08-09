@@ -1,4 +1,4 @@
-
+import re
 import streamlit as st
 from PIL import Image
 import pytesseract
@@ -19,7 +19,11 @@ class OCR:
             st.image(img, width=350)
             st.info("Extracted Text")
             self.text = self.extract(img)
-            st.write("{}".format(self.text))
+            #st.write("{}".format(self.text))
+            
+            trash, x = str(self.text).split("Tax")
+            print(re.findall(r"(\d+)M", x))
+            
             
                 
 
@@ -28,6 +32,6 @@ class OCR:
         text = pytesseract.image_to_string(img, lang="eng")
         return text
 
-        
+        if
 ocr = OCR()
 ocr.main()
