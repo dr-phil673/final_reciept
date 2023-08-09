@@ -27,6 +27,6 @@ class OCR:
     
     def extract(self, img):
         text = pytesseract.image_to_string(img, lang="eng")
-        return
+        return text
 ocr = OCR()
 ocr.main()
