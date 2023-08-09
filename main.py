@@ -19,7 +19,7 @@ class OCR:
             st.image(img, width=350)
             st.info("Extracted Text")
             self.text = self.extract(img)
-            #st.write("{}".format(self.text))
+            st.write("{}".format(self.text))
             try:
                 trash, x = str(self.text).split("Tax")
             except ValueError:
